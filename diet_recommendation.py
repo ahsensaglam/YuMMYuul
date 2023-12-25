@@ -208,6 +208,3 @@ if st.session_state.selected_food2:
         # If an error occurs, simply do nothing
         pass
 
-
-
-
