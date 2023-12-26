@@ -7,8 +7,12 @@ from google_images_search import GoogleImagesSearch
 from googleapiclient.discovery import build
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
+import re
 import json
 
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', 500)
+pd.set_option('display.expand_frame_repr', False)
 
 ###############  ORIGINAL DATAFRAME ###############
 # url = 'https://raw.githubusercontent.com/zakaria-narjis/Diet-Recommendation-System/main/Data/dataset.csv'
@@ -23,6 +27,36 @@ df60= pd.read_pickle(r"C:\Users\minek\PycharmProjects\miuul_python\Bitirme_Proje
 df120= pd.read_pickle(r"C:\Users\minek\PycharmProjects\miuul_python\Bitirme_Projesi\df120.pkl")
 
 ingredients = np.load(r'C:\Users\minek\PycharmProjects\miuul_python\Bitirme_Projesi\ingredients.npy')
+
+## DF cleaning
+
+# Assuming your data is stored in a DataFrame called df
+# Make sure to import the necessary libraries and load your data before running this code
+
+# Define a function to extract ingredients within c() parentheses
+# def extract_ingredients(text):
+#     match = re.search(r'c\((.*?)\)', text)
+#     if match:
+#         return match.group(1)
+#     else:
+#         return ""
+#
+#
+# # Apply the function to the RecipeIngredientParts column
+# df15['RecipeIngredientParts'] = df15['RecipeIngredientParts'].apply(extract_ingredients)
+# df15['RecipeInstructions'] = df15['RecipeInstructions'].apply(extract_ingredients)
+#
+# df30['RecipeIngredientParts'] = df30['RecipeIngredientParts'].apply(extract_ingredients)
+# df30['RecipeInstructions'] = df30['RecipeInstructions'].apply(extract_ingredients)
+#
+# df45['RecipeIngredientParts'] = df45['RecipeIngredientParts'].apply(extract_ingredients)
+# df45['RecipeInstructions'] = df45['RecipeInstructions'].apply(extract_ingredients)
+#
+# df60['RecipeIngredientParts'] = df60['RecipeIngredientParts'].apply(extract_ingredients)
+# df60['RecipeInstructions'] = df60['RecipeInstructions'].apply(extract_ingredients)
+#
+# df120['RecipeIngredientParts'] = df120['RecipeIngredientParts'].apply(extract_ingredients)
+# df120['RecipeInstructions'] = df120['RecipeInstructions'].apply(extract_ingredients)
 
 
 # df15.to_pickle('df15.pkl')
@@ -162,9 +196,9 @@ def search_youtube_videos(query, api_key):
     return video_url
 
 # API keys for image and video search
-google_api_key = "AIzaSyDn9n4L1JHYQL52wk-hcbGQk05F-MGBc2M"
+google_api_key = "AIzaSyDERCwNaXxtCegeElR31r5XyuXOHg0473o"
 google_cse_id = "45b5cec8ecf9344ad"
-youtube_api_key = "AIzaSyDn9n4L1JHYQL52wk-hcbGQk05F-MGBc2M"
+youtube_api_key = "AIzaSyDERCwNaXxtCegeElR31r5XyuXOHg0473o"
 
 
 
@@ -192,19 +226,29 @@ else:
 
 # Perform the search and display the image and video
 if st.session_state.selected_food2:
-    df[df["Name"] == st.session_state.selected_food2]["RecipeIngredientParts"]
-    df[df["Name"] == st.session_state.selected_food2]["RecipeInstructions"]
-
     try:
-        image_url = search_google_images(st.session_state.selected_food2, google_api_key, google_cse_id)
-        video_url = search_youtube_videos(st.session_state.selected_food2, youtube_api_key)
+        st.subheader("Ingredients:")
+        st.write(df[df["Name"] == st.session_state.selected_food2]["RecipeIngredientParts"].values[0])
 
-        # Display the image
-        st.image(image_url, caption=f'{st.session_state.selected_food2} - Google Image Search Result', use_column_width=True)
-
-        # Display the video as playable in Streamlit
-        st.video(video_url)
+        st.subheader("Recipe:")
+        st.write(df[df["Name"] == st.session_state.selected_food2]["RecipeInstructions"].values[0])
     except Exception as e:
         # If an error occurs, simply do nothing
         pass
+
+    # try:
+    #     image_url = search_google_images(st.session_state.selected_food2, google_api_key, google_cse_id)
+    #     video_url = search_youtube_videos(st.session_state.selected_food2, youtube_api_key)
+    #
+    #     # Display the image
+    #     st.image(image_url, caption=f'{st.session_state.selected_food2} - Google Image Search Result', use_column_width=True)
+    #
+    #     # Display the video as playable in Streamlit
+    #     st.video(video_url)
+    # except Exception as e:
+    #     # If an error occurs, simply do nothing
+    #     pass
+
+
+
 
