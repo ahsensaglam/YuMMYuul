@@ -236,18 +236,18 @@ if st.session_state.selected_food2:
         # If an error occurs, simply do nothing
         pass
 
-    # try:
-    #     image_url = search_google_images(st.session_state.selected_food2, google_api_key, google_cse_id)
-    #     video_url = search_youtube_videos(st.session_state.selected_food2, youtube_api_key)
-    #
-    #     # Display the image
-    #     st.image(image_url, caption=f'{st.session_state.selected_food2} - Google Image Search Result', use_column_width=True)
-    #
-    #     # Display the video as playable in Streamlit
-    #     st.video(video_url)
-    # except Exception as e:
-    #     # If an error occurs, simply do nothing
-    #     pass
+    try:
+        image_url = search_google_images(st.session_state.selected_food2, google_api_key, google_cse_id)
+        video_url = search_youtube_videos(st.session_state.selected_food2, youtube_api_key)
+
+        # Display the image
+        st.image(image_url, caption=f'{st.session_state.selected_food2} - Google Image Search Result', use_column_width=True)
+
+        # Display the video as playable in Streamlit
+        st.video(video_url)
+    except Exception as e:
+        # If an error occurs, simply do nothing
+        pass
 
 
 
