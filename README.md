@@ -23,24 +23,25 @@ Run the project: npm start or python app.py <br/>
 
 Dataset includes 16 columns and 375703 features.
 
-|    | Column                | Dtype   | Description                |   |
-|----|-----------------------|---------|----------------------------|---|
-| 0  | RecipeId              | int64   | Recipe Id (unique)         |   |
-| 1  | Name                  | object  | Recipe's name              |   |
-| 2  | CookTime              | int64   | Cooking Time (minutes)     |   |
-| 3  | PrepTime              | int64   | Preparation Time (minutes) |   |
-| 4  | TotalTime             | int64   | Total Time (minutes)       |   |
-| 5  | RecipeIngredientParts | object  | Ingredients                |   |
-| 6  | Calories              | float64 | Calories                   |   |
-| 7  | FatContent            | float64 | Fat                        |   |
-| 8  | SaturatedFatContent   | float64 | Saturated Fat              |   |
-| 9  | CholesterolContent    | float64 | Cholesterol                |   |
-| 10 | SodiumContent         | float64 | Sodium                     |   |
-| 11 | CarbohydrateContent   | float64 | Carbohydrate               |   |
-| 12 | FiberContent          | float64 | Fiber                      |   |
-| 13 | SugarContent          | float64 | Sugar                      |   |
-| 14 | ProteinContent        | float64 | Protein                    |   |
-| 15 | RecipeInstructions    | object  | Recipe                     |   |
+
+|    | Column                | Dtype   | Description                |
+|----|-----------------------|---------|----------------------------|
+| 0  | RecipeId              | int64   | Recipe Id (unique)         |
+| 1  | Name                  | object  | Recipe's name              |
+| 2  | CookTime              | int64   | Cooking Time (minutes)     |
+| 3  | PrepTime              | int64   | Preparation Time (minutes) |
+| 4  | TotalTime             | int64   | Total Time (minutes)       |
+| 5  | RecipeIngredientParts | object  | Ingredients                |
+| 6  | Calories              | float64 | Calories                   |
+| 7  | FatContent            | float64 | Fat                        |
+| 8  | SaturatedFatContent   | float64 | Saturated Fat              |
+| 9  | CholesterolContent    | float64 | Cholesterol                |
+| 10 | SodiumContent         | float64 | Sodium                     |
+| 11 | CarbohydrateContent   | float64 | Carbohydrate               |
+| 12 | FiberContent          | float64 | Fiber                      |
+| 13 | SugarContent          | float64 | Sugar                      |
+| 14 | ProteinContent        | float64 | Protein                    |
+| 15 | RecipeInstructions    | object  | Recipe                     |
 
 
 
