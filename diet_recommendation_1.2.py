@@ -18,13 +18,13 @@ pd.set_option('display.expand_frame_repr', False)
 # df = pd.read_csv(url, compression='gzip')
 
 ###############  LOAD DATAFRAMES ###############
-df15 = pd.read_pickle(r"C:\Users\minek\PycharmProjects\miuul_python\Bitirme_Projesi\diet_recommendation\df15.pkl")
-df30 = pd.read_pickle(r"C:\Users\minek\PycharmProjects\miuul_python\Bitirme_Projesi\diet_recommendation\df30.pkl")
-df45 = pd.read_pickle(r"C:\Users\minek\PycharmProjects\miuul_python\Bitirme_Projesi\diet_recommendation\df45.pkl")
-df60 = pd.read_pickle(r"C:\Users\minek\PycharmProjects\miuul_python\Bitirme_Projesi\diet_recommendation\df60.pkl")
-df120 = pd.read_pickle(r"C:\Users\minek\PycharmProjects\miuul_python\Bitirme_Projesi\diet_recommendation\df120.pkl")
+df15= pd.read_pickle("df15.pkl")
+df30= pd.read_pickle("df15.pkl")
+df45= pd.read_pickle("df15.pkl")
+df60= pd.read_pickle("df15.pkl")
+df120= pd.read_pickle("df15.pkl")
 
-ingredients = np.load(r"C:\Users\minek\PycharmProjects\miuul_python\Bitirme_Projesi\diet_recommendation\ingredients.npy")
+ingredients = np.load("ingredients.npy")
 
 
 ###############  STREAMLIT ###############
