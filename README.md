@@ -51,7 +51,9 @@ Found a bug or have a suggestion? Open an issue! <br/>
 Connect with us on mail for the latest updates. <br/>
 
 ### 🌟 Acknowledgments: <br/>
-A big thank you to all contributors who have helped shape this project!
+A big thank you to all contributors who have helped shape this project! 
+
+* [Ahsen Sağlam](https://github.com/ahsensaglam) <br/>
 
 Let's collaborate and build something amazing together. Happy coding! 🚀
 
