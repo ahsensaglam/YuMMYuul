@@ -54,6 +54,8 @@ Connect with us on mail for the latest updates. <br/>
 A big thank you to all contributors who have helped shape this project! 
 
 * [Ahsen Sağlam](https://github.com/ahsensaglam) <br/>
+Gülnihal İştotan
+Habibe Korkmaz
 
 Let's collaborate and build something amazing together. Happy coding! 🚀
 
